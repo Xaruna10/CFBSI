@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="v2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/ml-100k.zip!/" />
+      <root url="jar://$PROJECT_DIR$/ml-1m.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
