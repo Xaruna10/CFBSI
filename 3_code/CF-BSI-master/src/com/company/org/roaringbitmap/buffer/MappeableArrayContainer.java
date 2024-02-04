@@ -2,13 +2,15 @@
  * (c) Daniel Lemire, Owen Kaser, Samy Chambi, Jon Alvarado, Rory Graves, Björn Sperber
  * Licensed under the Apache License, Version 2.0.
  */
-package org.roaringbitmap.buffer;
+package com.company.org.roaringbitmap.buffer;
 
-import org.roaringbitmap.ShortIterator;
+import com.company.org.roaringbitmap.ShortIterator;
 
 import java.io.*;
 import java.nio.ShortBuffer;
 import java.util.Iterator;
+
+import static com.company.org.roaringbitmap.Util.*;
 
 /**
  * Simple container made of an array of 16-bit integers. Unlike
@@ -157,7 +159,7 @@ public final class MappeableArrayContainer extends MappeableContainer implements
         MappeableArrayContainer answer = new MappeableArrayContainer(
                 desiredCapacity);
         if (this.content.hasArray() && value2.content.hasArray())
-            answer.cardinality = org.roaringbitmap.Util.unsignedIntersect2by2(
+            answer.cardinality = unsignedIntersect2by2(
                     value1.content.array(), value1.getCardinality(),
                     value2.content.array(), value2.getCardinality(),
                     answer.content.array());
@@ -180,7 +182,7 @@ public final class MappeableArrayContainer extends MappeableContainer implements
         final MappeableArrayContainer answer = new MappeableArrayContainer(
                 desiredCapacity);
         if (value1.content.hasArray() && value2.content.hasArray())
-            answer.cardinality = org.roaringbitmap.Util.unsignedDifference(
+            answer.cardinality = unsignedDifference(
                     value1.content.array(), value1.getCardinality(),
                     value2.content.array(), value2.getCardinality(),
                     answer.content.array());
@@ -374,7 +376,7 @@ public final class MappeableArrayContainer extends MappeableContainer implements
     @Override
     public MappeableArrayContainer iandNot(final MappeableArrayContainer value2) {
         if (value2.content.hasArray())
-            this.cardinality = org.roaringbitmap.Util.unsignedDifference(
+            this.cardinality = unsignedDifference(
                     this.content.array(), this.getCardinality(),
                     value2.content.array(), value2.getCardinality(),
                     this.content.array());
@@ -641,7 +643,7 @@ public final class MappeableArrayContainer extends MappeableContainer implements
         final MappeableArrayContainer answer = new MappeableArrayContainer(
                 totalCardinality);
         if (value1.content.hasArray() && value2.content.hasArray())
-            answer.cardinality = org.roaringbitmap.Util.unsignedUnion2by2(
+            answer.cardinality = unsignedUnion2by2(
                     value1.content.array(), value1.getCardinality(),
                     value2.content.array(), value2.getCardinality(),
                     answer.content.array());
@@ -784,8 +786,7 @@ public final class MappeableArrayContainer extends MappeableContainer implements
         final MappeableArrayContainer answer = new MappeableArrayContainer(
                 totalCardinality);
         if (value1.content.hasArray() && value2.content.hasArray())
-            answer.cardinality = org.roaringbitmap.Util
-                    .unsignedExclusiveUnion2by2(value1.content.array(),
+            answer.cardinality = unsignedExclusiveUnion2by2(value1.content.array(),
                             value1.getCardinality(), value2.content.array(),
                             value2.getCardinality(), answer.content.array());
         else

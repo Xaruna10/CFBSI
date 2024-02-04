@@ -1,4 +1,4 @@
-package org.roaringbitmap;
+package com.company.org.roaringbitmap;
 
 public interface BitmapDataProvider extends ImmutableBitmapDataProvider {
     /**

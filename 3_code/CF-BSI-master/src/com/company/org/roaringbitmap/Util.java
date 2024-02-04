@@ -3,7 +3,7 @@
  * Licensed under the Apache License, Version 2.0.
  */
 
-package org.roaringbitmap;
+package com.company.org.roaringbitmap;
 
 /**
  * Various useful methods for roaring bitmaps.

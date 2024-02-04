@@ -1,4 +1,4 @@
-package org.roaringbitmap;
+package com.company.org.roaringbitmap;
 
 /**
  * 

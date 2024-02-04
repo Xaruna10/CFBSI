@@ -1,4 +1,4 @@
-package org.roaringbitmap.buffer;
+package com.company.org.roaringbitmap.buffer;
 
 import java.io.DataOutput;
 import java.io.IOException;

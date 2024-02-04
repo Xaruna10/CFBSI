@@ -15,7 +15,7 @@ import java.util.Random;
 import java.util.StringTokenizer;
 import java.util.concurrent.ConcurrentHashMap;
 
-import org.roaringbitmap.RoaringBitmap;
+import com.company.org.roaringbitmap.RoaringBitmap;
 
 import com.company.bsi.BsiAttributeRoaring;
 

@@ -2,11 +2,11 @@
  * (c) Daniel Lemire, Owen Kaser, Samy Chambi, Jon Alvarado, Rory Graves, Björn Sperber
  * Licensed under the Apache License, Version 2.0.
  */
-package org.roaringbitmap.buffer;
+package com.company.org.roaringbitmap.buffer;
 
-import org.roaringbitmap.ImmutableBitmapDataProvider;
-import org.roaringbitmap.IntIterator;
-import org.roaringbitmap.ShortIterator;
+import com.company.org.roaringbitmap.ImmutableBitmapDataProvider;
+import com.company.org.roaringbitmap.IntIterator;
+import com.company.org.roaringbitmap.ShortIterator;
 
 import java.io.DataOutput;
 import java.io.IOException;

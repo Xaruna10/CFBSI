@@ -2,15 +2,17 @@
  * (c) Daniel Lemire, Owen Kaser, Samy Chambi, Jon Alvarado, Rory Graves, Björn Sperber
  * Licensed under the Apache License, Version 2.0.
  */
-package org.roaringbitmap.buffer;
+package com.company.org.roaringbitmap.buffer;
 
-import org.roaringbitmap.BitmapContainer;
-import org.roaringbitmap.ShortIterator;
-import org.roaringbitmap.Util;
+import com.company.org.roaringbitmap.BitmapContainer;
+import com.company.org.roaringbitmap.ShortIterator;
+import com.company.org.roaringbitmap.Util;
 
 import java.io.*;
 import java.nio.LongBuffer;
 import java.util.Iterator;
+
+import static com.company.org.roaringbitmap.Util.*;
 
 /**
  * Simple bitset-like container. Unlike org.roaringbitmap.BitmapContainer, this
@@ -154,7 +156,7 @@ public final class MappeableBitmapContainer extends MappeableContainer
         final MappeableArrayContainer ac = new MappeableArrayContainer(
                 newCardinality);
         if (this.bitmap.hasArray() && value2.bitmap.hasArray())
-            org.roaringbitmap.Util.fillArrayAND(ac.content.array(),
+            fillArrayAND(ac.content.array(),
                     this.bitmap.array(), value2.bitmap.array());
         else
             BufferUtil.fillArrayAND(ac.content.array(), this.bitmap,
@@ -223,7 +225,7 @@ public final class MappeableBitmapContainer extends MappeableContainer
         final MappeableArrayContainer ac = new MappeableArrayContainer(
                 newCardinality);
         if (this.bitmap.hasArray() && value2.bitmap.hasArray())
-            org.roaringbitmap.Util.fillArrayANDNOT(ac.content.array(),
+            fillArrayANDNOT(ac.content.array(),
                     this.bitmap.array(), value2.bitmap.array());
         else
             BufferUtil.fillArrayANDNOT(ac.content.array(), this.bitmap,
@@ -483,8 +485,7 @@ public final class MappeableBitmapContainer extends MappeableContainer
             }
             final MappeableArrayContainer ac = new MappeableArrayContainer(
                     newCardinality);
-            org.roaringbitmap.Util
-                    .fillArrayANDNOT(ac.content.array(), b, b2Arr);
+            fillArrayANDNOT(ac.content.array(), b, b2Arr);
             ac.cardinality = newCardinality;
             return ac;
 
@@ -625,7 +626,7 @@ public final class MappeableBitmapContainer extends MappeableContainer
             final MappeableArrayContainer ac = new MappeableArrayContainer(
                     newCardinality);
 
-            org.roaringbitmap.Util.fillArrayXOR(ac.content.array(), b, b2Arr);
+            fillArrayXOR(ac.content.array(), b, b2Arr);
             ac.cardinality = newCardinality;
             return ac;
 
@@ -1031,7 +1032,7 @@ public final class MappeableBitmapContainer extends MappeableContainer
         final MappeableArrayContainer ac = new MappeableArrayContainer(
                 newCardinality);
         if (this.bitmap.hasArray() && value2.bitmap.hasArray())
-            org.roaringbitmap.Util.fillArrayXOR(ac.content.array(),
+            fillArrayXOR(ac.content.array(),
                     this.bitmap.array(), value2.bitmap.array());
         else
 

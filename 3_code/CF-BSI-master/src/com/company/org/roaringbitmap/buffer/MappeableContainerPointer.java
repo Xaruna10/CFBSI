@@ -1,4 +1,4 @@
-package org.roaringbitmap.buffer;
+package com.company.org.roaringbitmap.buffer;
 
 /**
  * 

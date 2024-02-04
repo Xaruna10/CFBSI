@@ -4,7 +4,7 @@ import com.company.hybridewah.HybridBitmap;
 
 import java.io.Serializable;
 
-import org.roaringbitmap.RoaringBitmap;
+import com.company.org.roaringbitmap.RoaringBitmap;
 
 /**
  * 
