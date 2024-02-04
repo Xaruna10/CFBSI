@@ -1,7 +1,3 @@
-/*
- * (c) Daniel Lemire, Owen Kaser, Samy Chambi, Jon Alvarado, Rory Graves, Björn Sperber
- * Licensed under the Apache License, Version 2.0.
- */
 package com.company.org.roaringbitmap.buffer;
 
 import com.company.org.roaringbitmap.ImmutableBitmapDataProvider;
