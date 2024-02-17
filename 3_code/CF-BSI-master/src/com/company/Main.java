@@ -11,10 +11,11 @@ public class Main {
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         long start = System.currentTimeMillis();
-        Path currentRelativePath = Paths.get("");
-        String s = currentRelativePath.toAbsolutePath().toString()+"/";
+        long beforeUsedMem=Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory();
+//        Path currentRelativePath = Paths.get("");
+//        String s = currentRelativePath.toAbsolutePath().toString()+"/";
 
-        String currentDirectory = s;
+        String currentDirectory = "<Path to just before movie100kdataset>";
         String filename1 = currentDirectory + "movie100kdataset/users_m.txt";
         String filename2 = currentDirectory + "movie100kdataset/items_m.txt";
         String userSimilarityFile = currentDirectory + "movie100kdataset/user_similarity_matrix.tmp";
@@ -84,6 +85,10 @@ public class Main {
         long timeElapsed = finish - start;
         System.out.println("Tme taken: " + timeElapsed + " ms");
         System.out.println("Finished storing bsi_recommendations_for_all_users");
+        long afterUsedMem=Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory();
+        long actualMemUsed=afterUsedMem-beforeUsedMem;
+
+        System.out.println("Total memory used: "+ actualMemUsed);
 
         // below lines are not used, just for understanding filter bitmap index function
         // bsi ~=cbv
